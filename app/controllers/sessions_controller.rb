@@ -16,6 +16,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def index
+    @user = User.find(params[:id])
+  end
+
   def destroy
     reset_session
     redirect_to root_path, notice:'ログアウトしました'

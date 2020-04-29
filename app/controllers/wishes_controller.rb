@@ -3,6 +3,8 @@ class WishesController < ApplicationController
   end
 
   def index
+    @user = current_user.id
+    
   end
 
   def show

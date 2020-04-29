@@ -1,1 +1,46 @@
-<p>このページは仮のトップページです。</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plearn</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+
+<%= image_tag 'wish-top.png', class:"top-image" %>
+    <div>
+        <h1 class='topTitle'>Wish</h1>
+        <h5 class='subTitle'>やりたいこと、全部やろう</h5>
+        <% if current_user %>
+            <div class='titleLinkLeft'>
+                <%= link_to 'マイページ', mypage_path(@user), class:'btn btn-warning '%>
+            </div>
+            <div class='titleLinkRight'>
+                <%= link_to 'wish一覧', wishes_path, class:'btn btn-warning'%>
+            </div>
+        <% else %>
+            <div class='titleLinkLeft'>
+                <%= link_to '新規会員登録', sign_up_path, class:'btn btn-warning '%>
+            </div>
+            <div class='titleLinkRight'>
+                <%= link_to 'ログイン', sign_in_path, class:'btn btn-warning'%>
+            </div>
+        <% end %>
+    </div>
+    <h2>Wish</h2>
+    <p>このアプリは、自分のWish（やりたいこと、行きたい場所など）を登録し、それを自分の友人に公開することでその実現を後押しするものです。</p>
+    <h4>1人で！</h4>
+    <p>1人でTodoリスト代わりに使うのもOK。登録したWishを公開しないように設定すれば、それが可能です。</p>
+    <h4>みんなで！</h4>
+    <p>自分が登録したWishを公開すれば、それに共感した友人が一緒にやろう！と声をかけてくれるかもしれません。</p>
+    <% if !current_user %>
+        <h5>今すぐ始める</h5>
+        <%= link_to '新規会員登録', sign_up_path, class:'btn btn-warning '%>
+    <%end%>
+</body>
+</html>

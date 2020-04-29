@@ -1,2 +1,3 @@
 <h1>Wishes#index</h1>
-<p>Find me in app/views/wishes/index.html.erb</p>
+<%= link_to 'マイページ', mypage_path(@user), class:'btn btn-warning'%>
+<%= link_to '新規登録', new_wish_path, class:'btn btn-primary'%>

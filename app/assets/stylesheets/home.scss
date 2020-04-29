@@ -1,40 +1,23 @@
-@import "bootstrap";
-
-@import "layouts/navbar";
-
-.top-image {
+img {
   background-size: cover;
   width: 100%;
   height: 770px;
   position: relative;
 }
+
 .topTitle {
   margin: 0 auto;
   text-align: center;
   font-size: 50px;
   position: absolute;
   top: 40%;
-  left: 20%;
+  left: 60%;
   letter-spacing: 4px;
-  color: white;
 }
 
 .subTitle {
   position: absolute;
   top: 48%;
-  left: 22%;
+  left: 62%;
   letter-spacing: 2px;
-  color: white;
-}
-
-.titleLinkLeft {
-  position: absolute;
-  top: 5%;
-  left: 85%;
-}
-
-.titleLinkRight {
-  position: absolute;
-  top: 5%;
-  left: 93%;
 }
