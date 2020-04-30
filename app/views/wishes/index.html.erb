@@ -1,11 +1,17 @@
 <h1>Wishes#index</h1>
-<%= link_to 'マイページ', mypage_path(@user), class:'btn btn-warning'%>
+<%= link_to 'マイページ', mypage_path(current_user.id), class:'btn btn-warning'%>
 <%= link_to '新規登録', new_wish_path, class:'btn btn-primary'%>
+
+<%= search_form_for @search, url:wishes_path do |f|%>
+<%= f.label :title_cont, "タイトル"%>
+<%= f.search_field :title_cont%>
+<%= f.submit '検索', class:"btn btn-primary"%>
+<% end %>
 
 <div>
     <% @wishes.each do |wish| %>
         <div>
-        <%= link_to "#{wish.user_id}",otherpage_path(wish.user_id) %>
+        <%= link_to "#{wish.user.name}",otherpage_path(wish.user_id) %>
         <%= link_to "#{wish.title}",wish_path(wish.id) %>
         </div>
     <%end%>
