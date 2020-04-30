@@ -3,6 +3,11 @@
 <%= link_to '新規登録', new_wish_path, class:'btn btn-primary'%>
 <%= link_to 'みんなのwishへ', wishes_path, class:'nav-link'%>
 <div>
+    <div>Name:　<%= current_user.name%></div>
+    <div>Email:　<%= current_user.email%></div>
+    <div><%= simple_format(h(current_user.myself))%></div>
+    <br>
+        <h3>Wish一覧</h3>
     <% @wishes.each do |wish| %>
         <p><%= link_to "#{wish.title}", wish_path(wish.id) %></p>
     <%end%>

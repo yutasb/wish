@@ -1,6 +1,9 @@
 <h1>Otherpages#show</h1>
 <%=link_to '戻る', wishes_path%>
 <div><%= @user.name%></div>
+<div><%= simple_format(h(@user.myself))%></div>
+<br>
+<h3>Wish一覧</h3>
 <% @wishes.each do |wish|%>
     <p><%= wish.title%></p>
 <% end %>
