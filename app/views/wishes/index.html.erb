@@ -1,3 +1,12 @@
 <h1>Wishes#index</h1>
 <%= link_to 'マイページ', mypage_path(@user), class:'btn btn-warning'%>
 <%= link_to '新規登録', new_wish_path, class:'btn btn-primary'%>
+
+<div>
+    <% @wishes.each do |wish| %>
+        <div>
+        <%= link_to "#{wish.user_id}",otherpage_path(wish.user_id) %>
+        <%= link_to "#{wish.title}",wish_path(wish.id) %>
+        </div>
+    <%end%>
+</div>
