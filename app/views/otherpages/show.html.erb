@@ -5,5 +5,5 @@
 <br>
 <h3>Wish一覧</h3>
 <% @wishes.each do |wish|%>
-    <p><%= wish.title%></p>
+    <p><%= link_to "#{wish.title}", wish_path(wish.id)%></p>
 <% end %>

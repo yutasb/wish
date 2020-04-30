@@ -65,3 +65,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'unicorn'
 gem 'bootstrap', '~> 4.4.1'
 gem 'rinku'
+gem 'ransack'

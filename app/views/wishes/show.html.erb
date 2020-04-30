@@ -12,6 +12,7 @@
 
     <% if current_user.id == @wish.user_id %>
          <%= link_to '編集', edit_wish_path(@wish.id), class:'btn btn-warning'%>
+         <%= link_to '削除', wish_path(@wish.id), method: :delete, class:'btn btn-danger', data:{confirm: '削除してよろしいですか？'}%>
     <% end %>
 </div>
 

@@ -14,8 +14,11 @@ class WishesController < ApplicationController
   end
 
   def index
-    @user = current_user.id
     @wishes = Wish.all
+
+    
+    @search = Wish.ransack(params[:q])
+    @wishes = @search.result
   end
 
   def show
@@ -34,6 +37,12 @@ class WishesController < ApplicationController
       flash.noe[:alert] = '更新できませんでした'
       render :edit
     end
+  end
+
+  def destroy
+    @wish = Wish.find(params[:id])
+    @wish.destroy
+    redirect_to mypage_path(current_user.id), notice:'削除しました'
   end
 
   private
