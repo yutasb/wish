@@ -17,13 +17,13 @@
 </div>
 <div class='mt5 w60 center'>
     <% @wishes.each do |wish| %>
-        <div class='oneWish p10'>
+        <div class='oneWish thumnailTextP'>
         <% if wish.user.image.url%>
             <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
         <%else%>
             <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
         <%end%>
-        <%= link_to "#{wish.title}",wish_path(wish.id)%>
+        <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText'%>
         </div>
     <%end%>
 </div>

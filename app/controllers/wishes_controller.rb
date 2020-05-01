@@ -16,13 +16,14 @@ class WishesController < ApplicationController
   def index
     @wishes = Wish.all
 
-    
+
     @search = Wish.ransack(params[:q])
     @wishes = @search.result
   end
 
   def show
     @wish = Wish.find(params[:id])
+    @user = @wish.user
   end
 
   def edit

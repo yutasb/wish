@@ -44,8 +44,20 @@
   height: 200px !important;
 }
 
+.thumnailText {
+  margin-top: 10px;
+  margin-left: 60px;
+  font-size: 18px;
+}
+
 .thumbnailImg {
   width: 40px !important;
+  height: auto !important;
+  float: left;
+}
+
+.otherpageImg {
+  width: 100px !important;
   height: auto !important;
 }
 
@@ -102,6 +114,14 @@
   margin-bottom: 5%;
 }
 
+.mb10 {
+  margin-bottom: 10%;
+}
+
+.mr25 {
+  margin-right: 25%;
+}
+
 .oneWish {
   padding: 0.5em 1em;
   margin: 1em 0;
@@ -110,6 +130,7 @@
   border-left: solid 10px #ffc06e;
   a {
     color: black !important;
+    display: block;
   }
 }
 .oneWish p {
@@ -128,7 +149,14 @@
   padding: 20px;
 }
 
-.p30 {
+.thumnailTextP {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 0;
+}
+
+.wishShow {
   padding-top: 40px;
   padding-left: 40px;
 
@@ -148,6 +176,10 @@
 
 .left {
   float: left !important;
+}
+
+.ml20 {
+  margin-left: 20px;
 }
 
 .ml30 {

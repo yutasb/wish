@@ -2,9 +2,23 @@
     <%=link_to 'wish一覧へ戻る', wishes_path, class:'right'%>
 </div>
 
-<div class='oneWish mt30 p30'>
+<div class='oneWish mt30 wishShow'>
 
-    <h2 class='textCenter'><%= @wish.title%></h2>
+    <div class='left'>
+        <% if @user.image.url%>
+            <%= link_to image_tag("#{@user.image.url}",class:"otherpageImg"), otherpage_path(@user.id) %>
+        <% else%>
+            <%= link_to image_tag('no-image.png',class:"otherpageImg"), otherpage_path(@user.id)%>
+        <% end%>
+        <div class='ml20'>
+    <%= link_to "#{@user.name}", otherpage_path(@user.id)%>
+    </div>
+    </div>
+    
+    <h2 class='textCenter mb10 mr25 mt5'><%= @wish.title%></h2>
+    
+
+    
     <br>
     <h4>詳細</h4>
     <p class='textCenter'><%= @wish.description%></p>
