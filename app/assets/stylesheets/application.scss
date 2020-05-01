@@ -252,3 +252,54 @@
     background-color: rgba(255, 0, 0, 0.699);
   }
 }
+
+.fromRight1 {
+  position: absolute;
+  top: 20%;
+  right: 2%;
+}
+
+.fromRight2 {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+
+.fromRight3 {
+  position: absolute;
+  top: 20%;
+  right: 18%;
+}
+
+.navigationBar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+hr {
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 900px) {
+  .fromRight1 {
+    position: absolute;
+    top: 20%;
+    right: 2%;
+  }
+
+  .fromRight2 {
+    position: absolute;
+    top: 20%;
+    right: 17%;
+  }
+
+  .fromRight3 {
+    position: absolute;
+
+    top: 20%;
+    right: 32%;
+  }
+}

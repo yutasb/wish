@@ -11,14 +11,10 @@
             <%= link_to image_tag('no-image.png',class:"otherpageImg"), otherpage_path(@user.id)%>
         <% end%>
         <div class='ml20'>
-    <%= link_to "#{@user.name}", otherpage_path(@user.id)%>
+            <%= link_to "#{@user.name}", otherpage_path(@user.id)%>
+        </div>
     </div>
-    </div>
-    
     <h2 class='textCenter mb10 mr25 mt5'><%= @wish.title%></h2>
-    
-
-    
     <br>
     <h4>詳細</h4>
     <p class='textCenter'><%= @wish.description%></p>
@@ -30,11 +26,11 @@
 </div>
 <div class='textCenter'>
     <% if current_user.id == @wish.user_id %>
-         <div class='mb2'>
-         <%= link_to '編集', edit_wish_path(@wish.id), class:'btn btn-warning'%>
-         </div>
-         <div>
-         <%= link_to '削除', wish_path(@wish.id), method: :delete, class:'btn btn-danger', data:{confirm: '削除してよろしいですか？'}%>
-         </div>
+        <div class='mb2'>
+            <%= link_to '編集', edit_wish_path(@wish.id), class:'btn btn-warning'%>
+        </div>
+        <div>
+            <%= link_to '削除', wish_path(@wish.id), method: :delete, class:'btn btn-danger', data:{confirm: '削除してよろしいですか？'}%>
+        </div>
     <% end %>
 </div>
