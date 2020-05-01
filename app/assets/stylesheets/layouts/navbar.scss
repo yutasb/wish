@@ -33,3 +33,70 @@
 .fs30 {
   font-size: 30px;
 }
+
+.navigationBar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.fromRight1 {
+  position: absolute;
+  top: 20%;
+  right: 2%;
+}
+
+.fromRight2 {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+
+.fromRight3 {
+  position: absolute;
+  top: 20%;
+  right: 18%;
+}
+
+.p5 {
+  padding: 5px;
+}
+
+hr {
+  margin-top: 5px !important;
+  margin-bottom: 0 !important;
+}
+
+.black {
+  color: black !important;
+}
+
+.decorationNone {
+  text-decoration: none !important;
+}
+
+.ml8 {
+  margin-left: 8%;
+}
+
+@media screen and (max-width: 900px) {
+  .fromRight1 {
+    position: absolute;
+    top: 20%;
+    right: 2%;
+  }
+
+  .fromRight2 {
+    position: absolute;
+    top: 20%;
+    right: 17%;
+  }
+
+  .fromRight3 {
+    position: absolute;
+
+    top: 20%;
+    right: 32%;
+  }
+}

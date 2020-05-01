@@ -1,6 +1,7 @@
-<h1>Otherpages#show</h1>
-<%=link_to '戻る', wishes_path%>
-<div>
+<div class='backLink'>
+    <%=link_to '戻る', wishes_path, class:'right'%>
+</div>
+<div class='textCenter mt5 left'>
     <% if @user.image.url%>
         <%= image_tag @user.image.url(:medium) %>
     <%else%>
@@ -9,8 +10,16 @@
     <div><%= @user.name%></div>
     <div><%= simple_format(h(@user.myself))%></div>
 </div>
-<br>
-<h3>Wish一覧</h3>
-<% @wishes.each do |wish|%>
-    <p><%= link_to "#{wish.title}", wish_path(wish.id)%></p>
-<% end %>
+<div class='mt5'>
+    <div class='ml30'>
+        <h3>Wish一覧</h3>
+        <br>
+    </div>
+    <div class='w60 center'>
+        <% @wishes.each do |wish|%>
+            <div class='oneWish p10'>
+                <p><%= link_to "#{wish.title}", wish_path(wish.id)%></p>
+            </div>
+        <% end %>
+    </div>
+</div>

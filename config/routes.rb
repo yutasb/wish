@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :wishes
   get '/sign_up', to: 'registrations#new'
   post '/sign_up', to: 'registrations#create'
+  delete '/quit/:id', to: 'registrations#destroy', as:'quit'
   get '/sign_in', to: 'sessions#new'
   post '/sign_in', to: 'sessions#create'
 

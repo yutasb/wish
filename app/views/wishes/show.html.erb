@@ -1,18 +1,26 @@
-<h1>Wishes#show</h1>
-<%= link_to 'マイページに戻る',mypage_path(@wish.user_id), class:'nav-link'%>
-<%= link_to 'wish一覧に戻る',wishes_path, class:'nav-link'%>
-
-<div>
-
-    <p><%= @wish.title%></p>
-    <p><%= @wish.description%></p>
-    <p><%= raw Rinku.auto_link(@wish.description_link1,:all,'target="_blank"')%></p>
-    <p><%= raw Rinku.auto_link(@wish.description_link2,:all,'target="_blank"')%></p>
-    <p><%= raw Rinku.auto_link(@wish.description_link3,:all,'target="_blank"')%></p>
-
-    <% if current_user.id == @wish.user_id %>
-         <%= link_to '編集', edit_wish_path(@wish.id), class:'btn btn-warning'%>
-         <%= link_to '削除', wish_path(@wish.id), method: :delete, class:'btn btn-danger', data:{confirm: '削除してよろしいですか？'}%>
-    <% end %>
+<div class='backLink'>
+    <%=link_to 'wish一覧へ戻る', wishes_path, class:'right'%>
 </div>
 
+<div class='oneWish mt30 p30'>
+
+    <h2 class='textCenter'><%= @wish.title%></h2>
+    <br>
+    <h4>詳細</h4>
+    <p class='textCenter'><%= @wish.description%></p>
+    <br>
+    <h4>関連リンク</h4>
+    <p class='textCenter'><%= raw Rinku.auto_link(@wish.description_link1,:all,'target="_blank"')%></p>
+    <p class='textCenter'><%= raw Rinku.auto_link(@wish.description_link2,:all,'target="_blank"')%></p>
+    <p class='textCenter'><%= raw Rinku.auto_link(@wish.description_link3,:all,'target="_blank"')%></p>
+</div>
+<div class='textCenter'>
+    <% if current_user.id == @wish.user_id %>
+         <div class='mb2'>
+         <%= link_to '編集', edit_wish_path(@wish.id), class:'btn btn-warning'%>
+         </div>
+         <div>
+         <%= link_to '削除', wish_path(@wish.id), method: :delete, class:'btn btn-danger', data:{confirm: '削除してよろしいですか？'}%>
+         </div>
+    <% end %>
+</div>

@@ -1,19 +1,27 @@
-<h1>Mypages#show</h1>
-<%= link_to 'プロフィール編集', edit_mypage_path(current_user.id), class:'btn btn-warning'%>
-<%= link_to '新規登録', new_wish_path, class:'btn btn-primary'%>
-<%= link_to 'みんなのwishへ', wishes_path, class:'nav-link'%>
-<div>
+<div class='textLeft mt5 left'>
     <% if @user.image.url%>
         <%= image_tag @user.image.url(:medium)%>
     <%else%>
         <%= image_tag 'no-image.png',class:'profImg' %>
     <% end %>
+
     <div>Name:　<%= current_user.name%></div>
     <div>Email:　<%= current_user.email%></div>
     <div><%= simple_format(h(current_user.myself))%></div>
-    <br>
-        <h3>Wish一覧</h3>
-    <% @wishes.each do |wish| %>
-        <p><%= link_to "#{wish.title}", wish_path(wish.id) %></p>
-    <%end%>
+    <%= link_to 'プロフィール編集', edit_mypage_path(current_user.id), class:'btn btn-warning'%>
 </div>
+    <div class='mt5'>
+        <div class='ml30'>
+            <h3>Wish一覧</h3>
+            <br>
+        </div>
+        <div class='center w60'>
+            <% @wishes.each do |wish| %>
+            <div class='oneWish p10 '>
+                <p><%= link_to "#{wish.title}", wish_path(wish.id) %></p>
+                </div>
+            <%end%>
+        </div>
+    </div>
+
+

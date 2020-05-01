@@ -1,4 +1,8 @@
-<nav class="navbar">
-    <%= link_to "Wish", root_path, class: "fs30" %>
-    <%= link_to "ログアウト", sign_out_path, method: :delete, class: "nav-link" %>
+<nav class="navigationBar">
+    <%= link_to "Wish", wishes_path, class: "fs30 p5 black decorationNone ml8" %>
+        <%= link_to '新規登録', new_wish_path, class:'btn btn-wish fromRight3'%>
+        <%= link_to 'マイページ', mypage_path(current_user.id), class:'btn btn-orange fromRight2'%>
+        <%= link_to "ログアウト", sign_out_path, method: :delete, class: "nav-link fromRight1" %>
+
 </nav>
+<hr>
