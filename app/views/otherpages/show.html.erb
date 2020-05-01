@@ -1,7 +1,14 @@
 <h1>Otherpages#show</h1>
 <%=link_to '戻る', wishes_path%>
-<div><%= @user.name%></div>
-<div><%= simple_format(h(@user.myself))%></div>
+<div>
+    <% if @user.image.url%>
+        <%= image_tag @user.image.url(:medium) %>
+    <%else%>
+        <%= image_tag 'no-image.png',class:'profImg' %>
+    <% end%>
+    <div><%= @user.name%></div>
+    <div><%= simple_format(h(@user.myself))%></div>
+</div>
 <br>
 <h3>Wish一覧</h3>
 <% @wishes.each do |wish|%>

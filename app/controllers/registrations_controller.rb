@@ -6,6 +6,7 @@ class RegistrationsController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.image = 'no-image.png'
     if @user.save
       redirect_to wishes_path, notice:'アカウント登録完了しました'
     else
