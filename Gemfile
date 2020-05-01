@@ -66,3 +66,5 @@ gem 'unicorn'
 gem 'bootstrap', '~> 4.4.1'
 gem 'rinku'
 gem 'ransack'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"

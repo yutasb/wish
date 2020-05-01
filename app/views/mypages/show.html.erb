@@ -1,8 +1,13 @@
 <h1>Mypages#show</h1>
-<%= link_to 'プロフィール編集', edit_mypage_path(@user), class:'btn btn-warning'%>
+<%= link_to 'プロフィール編集', edit_mypage_path(current_user.id), class:'btn btn-warning'%>
 <%= link_to '新規登録', new_wish_path, class:'btn btn-primary'%>
 <%= link_to 'みんなのwishへ', wishes_path, class:'nav-link'%>
 <div>
+    <% if @user.image.url%>
+        <%= image_tag @user.image.url(:medium)%>
+    <%else%>
+        <%= image_tag 'no-image.png',class:'profImg' %>
+    <% end %>
     <div>Name:　<%= current_user.name%></div>
     <div>Email:　<%= current_user.email%></div>
     <div><%= simple_format(h(current_user.myself))%></div>
