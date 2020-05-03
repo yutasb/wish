@@ -77,6 +77,11 @@
   color: white !important;
 }
 
+.wishList {
+  margin-left: 30%;
+  width: 50%;
+}
+
 .center {
   margin: 0 auto !important;
 }
@@ -301,5 +306,10 @@ hr {
 
     top: 20%;
     right: 32%;
+  }
+
+  .wishList {
+    margin-left: 50% !important;
+    width: 60%;
   }
 }

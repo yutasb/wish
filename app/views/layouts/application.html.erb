@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>
+    <%= content_for?(:html_title) ? yield(:html_title) : "Default" %>
+    </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
@@ -14,7 +17,7 @@
       <%= render 'partial/navbar'%>
     <% else %>
     <nav class='navigationBar'>
-       <%= link_to "Wish", root_path, class: "fs30 p5 black decorationNone ml8" %>
+      <%= link_to "Wish", root_path, class: "fs30 p5 black decorationNone ml8" %>
       <%= link_to '新規会員登録', sign_up_path, class:'btn btn-primary fromRight2'%>
       <%= link_to 'ログイン', sign_in_path, class:'btn btn-wish fromRight1'%>
     </nav>

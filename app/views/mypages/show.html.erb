@@ -1,3 +1,4 @@
+<% content_for(:html_title) { 'Wish | マイページ' } %>
 <div class='textLeft mt5 left'>
     <% if @user.image.url%>
         <%= image_tag @user.image.url(:medium)%>

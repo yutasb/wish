@@ -1,29 +1,29 @@
+<% content_for(:html_title) { 'Wish | 一覧' } %>
 <div class='searchBox'>
     <div class='mt5'>
         <%= search_form_for @search, url:wishes_path do |f|%>
             <%= f.search_field :title_cont,placeholder:"タイトル"%>
             <%= f.submit '検索', class:"btn btn-primary"%>
         <% end %>
-        <div class='mt10'>カテゴリ
-        </div>
-
+        <div class='mt10'>カテゴリ</div>
         <div class='cp_ipselect cp_sl03'>
-        <select>
-        <option value="hidden">選択してください</option>
-<option value="サンプル">サンプル</option></select>
-</div>
-<input type='button' value='検索' class='btn btn-primary'>
+            <select>
+                <option value="hidden">選択してください</option>
+                <option value="サンプル">サンプル</option>
+            </select>
+        </div>
+        <input type='button' value='検索' class='btn btn-primary'>
     </div>
 </div>
-<div class='mt5 w60 center'>
+<div class='wishList'>
     <% @wishes.each do |wish| %>
         <div class='oneWish thumnailTextP'>
-        <% if wish.user.image.url%>
-            <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-        <%else%>
-            <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-        <%end%>
-        <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText'%>
+            <% if wish.user.image.url%>
+                <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+            <%else%>
+                <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+            <%end%>
+            <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText'%>
         </div>
     <%end%>
 </div>

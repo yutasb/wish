@@ -35,7 +35,7 @@ class WishesController < ApplicationController
     if @wish.update(wish_params)
       redirect_to wish_path(@wish), notice:'更新しました'
     else
-      flash.noe[:alert] = '更新できませんでした'
+      flash.now[:alert] = '更新できませんでした'
       render :edit
     end
   end

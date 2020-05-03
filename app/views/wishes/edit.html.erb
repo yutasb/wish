@@ -1,9 +1,17 @@
-
+<% content_for(:html_title) { 'Wish | 編集' } %>
 <%= link_to '編集しないで戻る', wish_path(@wish), class:'nav-link backLink'%>
 <div class='w60 center'>
 <h1>編集</h1>
 <%= form_with model: @wish, method: :patch, local: true do |form|%>
-
+    <% if @wish.errors.any? %>
+        <div id='error_explanation'>
+            <ul>
+                <% @wish.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
     <div class='form-group mt5'>
         <%= form.label :title,"タイトル"%>
         <%= form.text_field :title, class:'form-control' %>
