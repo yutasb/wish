@@ -15,6 +15,11 @@ RSpec.describe Wish, type: :model do
       )
   end
 
+  example 'FactoryBotのデータ確認' do
+    wish = FactoryBot.create(:wish)
+    puts "wishのユーザーは#{wish.user.inspect}"
+  end
+
   example 'タイトルは必須' do
     wish = Wish.new(title: nil)
     wish.valid?
