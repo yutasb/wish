@@ -15,8 +15,6 @@ class WishesController < ApplicationController
 
   def index
     @wishes = Wish.all
-
-
     @search = Wish.ransack(params[:q])
     @wishes = @search.result
   end
@@ -49,6 +47,6 @@ class WishesController < ApplicationController
   private
 
   def wish_params
-    params.require(:wish).permit(:title,:description,:description_link1,:description_link2,:description_link3)
+    params.require(:wish).permit(:title,:description,:description_link1,:description_link2,:description_link3,:done_flg)
   end
 end

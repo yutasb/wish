@@ -2,8 +2,15 @@
 <div class='backLink'>
     <%=link_to 'wish一覧へ戻る', wishes_path, class:'right'%>
 </div>
-
-<div class='oneWish mt30 wishShow'>
+<div class='doneFlgBox'>
+<% if current_user.id == @wish.user_id %>
+    <%= form_with model: @wish, url: wish_path(@wish), method: :patch, local: true do |form|%>
+        <%= form.check_box :done_flg%>
+        <%= form.submit %>
+    <%end%>
+<% end%>
+</div>
+<div class='oneWish mt5 wishShow'>
 
     <div class='left'>
         <% if @user.image.url%>

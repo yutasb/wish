@@ -288,6 +288,14 @@ hr {
   margin-bottom: 0 !important;
 }
 
+.doneFlgBox {
+  margin-top: 5%;
+}
+
+.doneLine {
+  text-decoration: line-through;
+}
+
 @media screen and (max-width: 900px) {
   .fromRight1 {
     position: absolute;

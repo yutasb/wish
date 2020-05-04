@@ -9,4 +9,11 @@ class Wish < ApplicationRecord
 
     belongs_to :user
 
+
+
+
+    def done_wish(wish)
+        Wish.find_by(id: wish.id, done_flg: true)
+    end
+
 end

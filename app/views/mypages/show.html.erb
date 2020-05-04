@@ -18,8 +18,8 @@
         </div>
         <div class='center w60'>
             <% @wishes.each do |wish| %>
-            <div class='oneWish p10 '>
-                <p><%= link_to "#{wish.title}", wish_path(wish.id) %></p>
+                <div class='oneWish p10 '>
+                    <p><%= link_to "#{wish.title}", wish_path(wish.id) %></p>
                 </div>
             <%end%>
         </div>
