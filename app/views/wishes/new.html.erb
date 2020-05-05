@@ -2,7 +2,7 @@
 
 <%= link_to '戻る',wishes_path, class:'nav-link backLink'%>
 
-<div class='w60 center'>
+<div class='formCluster'>
     <h1>新規登録</h1>
     <%= form_with model: @wish, local: true do |form|%>
     <% if @wish.errors.any? %>
@@ -37,6 +37,10 @@
 
     <div class='form-group'>
         <%= form.text_field :description_link3, class:'form-control' %>
+    </div>
+    <div class='form-group'>
+        <%= form.label :private_flg,"公表しない場合はチェックしてください"%><br>
+        <%= form.check_box :private_flg%>
     </div>
     <div class='textCenter mt5'>
         <%= form.submit '登録する', class:'btn btn-wish'%>

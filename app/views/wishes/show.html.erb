@@ -2,16 +2,18 @@
 <div class='backLink'>
     <%=link_to 'wish一覧へ戻る', wishes_path, class:'right'%>
 </div>
-<div class='doneFlgBox'>
-<% if current_user.id == @wish.user_id %>
-    <%= form_with model: @wish, url: wish_path(@wish), method: :patch, local: true do |form|%>
-        <%= form.check_box :done_flg%>
-        <%= form.submit %>
-    <%end%>
-<% end%>
+<div class='doneFlgBox mb2'>
+    <% if current_user.id == @wish.user_id %>
+        <%= form_with model: @wish, url: wish_path(@wish), method: :patch, local: true do |form|%>
+            <%= form.check_box :done_flg%>
+            <%= form.submit '完了', class:'btn btn-orange' %>
+        <%end%>
+    <% end%>
 </div>
-<div class='oneWish mt5 wishShow'>
-
+<% if @wish.private_flg == true%>
+        <span class='badge badge-info fs15'>Private</span>
+<%end%>
+<div class='oneWish wishShow'>
     <div class='left'>
         <% if @user.image.url%>
             <%= link_to image_tag("#{@user.image.url}",class:"otherpageImg"), otherpage_path(@user.id) %>

@@ -17,23 +17,25 @@
 </div>
 <div class='wishList'>
     <% @wishes.each do |wish| %>
-        <div class='oneWish thumnailTextP'>
-            <% if wish.done_wish(wish)%>
-                <% if wish.user.image.url%>
-                    <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-                <%else%>
-                    <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-                <%end%>
-                <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText doneLine'%>
-            <% else%>
-                <% if wish.user.image.url%>
-                    <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-                <%else%>
-                    <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-                <%end%>
-                <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText'%>
-            <% end%>
-        </div>
+        <% if wish.private_flg == false%>
+            <div class='oneWish thumnailTextP'>
+                <% if wish.done_wish(wish)%>
+                    <% if wish.user.image.url%>
+                        <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+                    <%else%>
+                        <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+                    <%end%>
+                    <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText doneLine'%>
+                <% else%>
+                    <% if wish.user.image.url%>
+                        <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+                    <%else%>
+                        <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+                    <%end%>
+                    <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText'%>
+                <% end%>
+            </div>
+        <%end%>
     <%end%>
 </div>
 

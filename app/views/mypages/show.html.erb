@@ -19,7 +19,10 @@
         <div class='center w60'>
             <% @wishes.each do |wish| %>
                 <div class='oneWish p10 '>
-                    <p><%= link_to "#{wish.title}", wish_path(wish.id) %></p>
+                        <p><%= link_to "#{wish.title}", wish_path(wish.id) %></p>
+                        <% if wish.private_flg == true%>
+                            <span class='badge badge-info'>Private</span>
+                        <%end%>
                 </div>
             <%end%>
         </div>

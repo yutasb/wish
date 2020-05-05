@@ -127,6 +127,10 @@
   margin-right: 25%;
 }
 
+.fs15 {
+  font-size: 15px;
+}
+
 .oneWish {
   padding: 0.5em 1em;
   margin: 1em 0;
@@ -296,6 +300,11 @@ hr {
   text-decoration: line-through;
 }
 
+.formCluster {
+  width: 40%;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 900px) {
   .fromRight1 {
     position: absolute;
@@ -319,5 +328,10 @@ hr {
   .wishList {
     margin-left: 50% !important;
     width: 60%;
+  }
+
+  .formCluster {
+    width: 70%;
+    margin: 0 auto;
   }
 }

@@ -37,6 +37,12 @@
 <div class='form-group'>
 <%= form.text_field :description_link3, class:'form-control' %>
 </div>
+
+<div class='form-group'>
+    <%= form.label :private_flg,"公表しない場合はチェックしてください"%><br>
+    <%= form.check_box :private_flg%>
+</div>
+
 <div class='textCenter mt5'>
     <%= form.submit '更新する', class:'btn btn-warning'%>
     </div>
