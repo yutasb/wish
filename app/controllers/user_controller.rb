@@ -1,7 +1,5 @@
 class UserController < ApplicationController
-  def edit
-  end
+  def edit; end
 
-  def index
-  end
+  def index; end
 end

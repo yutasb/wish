@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to wishes_path, notice:'アカウント登録完了しました'
+      redirect_to wishes_path, notice: 'アカウント登録完了しました'
     else
       flash.now[:alert] = 'アカウント登録に失敗しました'
       render :new
@@ -23,6 +23,6 @@ class RegistrationsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation,:image)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
   end
 end

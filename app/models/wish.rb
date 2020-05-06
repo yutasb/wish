@@ -1,19 +1,14 @@
 class Wish < ApplicationRecord
-    validates :title, presence: true
-    validates :title, uniqueness: {scope: :user_id}
+  validates :title, presence: true
+  validates :title, uniqueness: { scope: :user_id }
+# rubocop:disable Layout/LineLength
+  validates :description_link1, format: /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/, allow_blank: true
+  validates :description_link2, format: /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/, allow_blank: true
+  validates :description_link3, format: /\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/, allow_blank: true
+# rubocop:enable Layout/LineLength
+  belongs_to :user
 
-    validates :description_link1, format: /\A#{URI::regexp(%w(http https))}\z/, allow_blank: true
-    validates :description_link2, format: /\A#{URI::regexp(%w(http https))}\z/, allow_blank: true
-    validates :description_link3, format: /\A#{URI::regexp(%w(http https))}\z/, allow_blank: true
-
-
-    belongs_to :user
-
-
-
-
-    def done_wish(wish)
-        Wish.find_by(id: wish.id, done_flg: true)
-    end
-
+  def done_wish(wish)
+    Wish.find_by(id: wish.id, done_flg: true)
+  end
 end

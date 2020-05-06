@@ -1,16 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "Wishes", type: :request do
-  context "認証済みのユーザー" do
-    
-    
-    
-
-    it "wish#new" do
+RSpec.describe 'Wishes', type: :request do
+  context '認証済みのユーザー' do
+    it 'wish#new' do
       user = User.create(
-        name:'test',
-        email:'testtest@example.com',
-        password:'password'
+        name: 'test',
+        email: 'testtest@example.com',
+        password: 'password'
       )
       sign_in user
       get new_wish_path

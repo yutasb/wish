@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :wish do
-    title {'テストタイトル'}
+    title { 'テストタイトル' }
     user
   end
 end

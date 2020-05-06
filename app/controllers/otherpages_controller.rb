@@ -5,4 +5,3 @@ class OtherpagesController < ApplicationController
     @follow = @user.relationships.find_by(follow_id: params[:id])
   end
 end
-

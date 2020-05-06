@@ -20,8 +20,8 @@ class MypagesController < ApplicationController
   end
 
   private
+
   def user_params
-    params.require(:user).permit(:name,:email,:myself,:image)
+    params.require(:user).permit(:name, :email, :myself, :image)
   end
 end
-

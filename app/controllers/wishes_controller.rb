@@ -6,11 +6,10 @@ class WishesController < ApplicationController
   def create
     @wish = current_user.wishes.new(wish_params)
     if @wish.save
-        redirect_to wishes_path, notice:'登録しました'
+      redirect_to wishes_path, notice: '登録しました'
     else
       render :new
     end
-
   end
 
   def index
@@ -25,13 +24,13 @@ class WishesController < ApplicationController
   end
 
   def edit
-    @wish =Wish.find(params[:id])
+    @wish = Wish.find(params[:id])
   end
 
   def update
     @wish = Wish.find(params[:id])
     if @wish.update(wish_params)
-      redirect_to wish_path(@wish), notice:'更新しました'
+      redirect_to wish_path(@wish), notice: '更新しました'
     else
       flash.now[:alert] = '更新できませんでした'
       render :edit
@@ -41,12 +40,12 @@ class WishesController < ApplicationController
   def destroy
     @wish = Wish.find(params[:id])
     @wish.destroy
-    redirect_to mypage_path(current_user.id), notice:'削除しました'
+    redirect_to mypage_path(current_user.id), notice: '削除しました'
   end
 
   private
 
   def wish_params
-    params.require(:wish).permit(:title,:description,:description_link1,:description_link2,:description_link3,:done_flg,:private_flg)
+    params.require(:wish).permit(:title, :description, :description_link1, :description_link2, :description_link3, :done_flg, :private_flg) # rubocop:disable Layout/LineLength
   end
 end
