@@ -25,7 +25,12 @@
                     <%else%>
                         <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
                     <%end%>
-                    <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText doneLine'%>
+                        <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText doneLine'%>
+                        <% if wish.favorited_by?(current_user)%>
+                            <div><%=link_to "気になるを解除", wish_favorites_path(wish.id), class:'btn btn-danger', method: :delete %></div>
+                        <% else%>
+                            <div><%=link_to "気になる", wish_favorites_path(wish.id),class:'btn btn-wish', method: :post %></div>
+                    <%end%>
                 <% else%>
                     <% if wish.user.image.url%>
                         <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
@@ -33,6 +38,13 @@
                         <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
                     <%end%>
                     <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText'%>
+                    <% if wish.favorited_by?(current_user)%>
+                    <div>
+                        <%=link_to "気になるを解除", wish_favorites_path(wish.id), class:'btn btn-danger', method: :delete %>
+                        </div>
+                    <% else%>
+                        <div><%=link_to "気になる", wish_favorites_path(wish.id),class:'btn btn-wish', method: :post %></div>
+                    <%end%>
                 <% end%>
             </div>
         <%end%>

@@ -25,6 +25,17 @@
                         <%end%>
                 </div>
             <%end%>
+            <h3 class='mt10'>お気に入りWish</h3>
+            <% @favorite_wishes.each do |wish|%>
+                <div class='oneWish p10 thumbnailTextP'>
+                <% if wish.user.image.url%>
+                        <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+                    <%else%>
+                        <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+                    <%end%>
+                    <p><%= link_to wish.title, wish_path(wish.id) %></p>
+                </div>
+            <% end%>
         </div>
     </div>
 

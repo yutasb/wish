@@ -17,6 +17,7 @@ class MypagesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @wishes = Wish.where(user_id: current_user)
+    @favorite_wishes = @user.favorite_wishes
   end
 
   private
