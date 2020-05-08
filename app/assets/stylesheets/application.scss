@@ -305,7 +305,23 @@ hr {
   margin: 0 auto;
 }
 
+.favoriteButton {
+  width: 20%;
+  font-size: 15px;
+}
+
 @media screen and (max-width: 900px) {
+  .titleLinkLeft {
+    position: absolute;
+    top: 5%;
+    left: 80%;
+  }
+
+  .titleLinkRight {
+    position: absolute;
+    top: 11%;
+    left: 80%;
+  }
   .fromRight1 {
     position: absolute;
     top: 20%;
@@ -333,5 +349,10 @@ hr {
   .formCluster {
     width: 70%;
     margin: 0 auto;
+  }
+
+  .favoriteButton {
+    width: 35%;
+    font-size: 12px;
   }
 }
