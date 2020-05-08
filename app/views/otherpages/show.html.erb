@@ -1,7 +1,14 @@
-<%# <%= render 'relationships/follow_button', user: @user %> %>
-
-
 <% content_for(:html_title) { 'Wish | ユーザー' } %>
+
+
+<% if current_user != @user %>
+    <% if @user.followed_by?(current_user) %>
+        <h4><%=link_to "フォロー解除", mypage_relationships_path(@user), class:'badge badge-danger',method: :delete %></h4>
+    <% else %>
+        <h4><%=link_to "フォロー", mypage_relationships_path(@user),class:'badge badge-info', method: :post %></h4>
+    <% end %>
+<% end %>
+
 <div class='backLink'>
     <%=link_to '戻る', wishes_path, class:'right'%>
 </div>

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'user/:id', to: 'otherpages#show', as:'otherpage'
   # 自分でprefixをつける際には、上記のように記述する
-  resources :mypages
+  resources :mypages do
+    resource :relationships, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
+  end
   resources :wishes do
     resource :favorites, only: [:create,:destroy]
   end
