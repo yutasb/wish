@@ -6,23 +6,24 @@
 
 
 # 使用技術
-## フロントエンド
+**フロントエンド**
 - HTML
 - CSS
   - bootstrap　4.4.1
   - scss
 - jQuery　4.3.5
   
-## バックエンド
+**バックエンド**
 - Ruby　2.6.3
 - Rails　5.2.4
 - RSpec　3.9.1
 
-## インフラ
+**インフラ**
 - Docker　19.03.8
   -  Webアプリケーション: Rails
-  -  Webサーバ: Nginx
-  -  APサーバ: Unicorn
+  -  Webサーバ: Nginx　1.16
+  -  APサーバ: Unicorn　
+  -  DBサーバ: MySQL　5.7
 - docker-compose　2
 
 

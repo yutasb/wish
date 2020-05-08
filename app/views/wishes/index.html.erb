@@ -20,24 +20,16 @@
         <% if wish.private_flg == false%>
             <div class='oneWish thumnailTextP'>
                 <% if wish.done_wish(wish)%>
-                    <% if wish.user.image.url%>
-                        <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-                    <%else%>
-                        <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-                    <%end%>
+                    <%= render partial: 'wishes/wish', locals:{wish: wish} %>
                     <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText doneLine'%>
-                     <div id="likes_buttons_<%= wish.id %>">
+                     <div id="favorites_buttons_<%= wish.id %>">
                         <%= render partial: 'favorites/favorite',locals:{wish: wish}%>
                     </div>
                 <% else%>
-                    <% if wish.user.image.url%>
-                        <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-                    <%else%>
-                        <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
-                    <%end%>
+                    <%= render partial: 'wishes/wish', locals:{wish: wish} %>
                     <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText'%>
-                    <div id="likes_buttons_<%= wish.id %>">
-                        <%= render partial: 'favorites/favorite',locals:{wish: wish},id:"likes_buttons_#{wish.id}"%>
+                    <div id="favorites_buttons_<%= wish.id %>">
+                        <%= render partial: 'favorites/favorite',locals:{wish: wish}%>
                     </div>
                 <% end%>
             </div>

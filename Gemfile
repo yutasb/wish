@@ -72,5 +72,5 @@ gem 'ransack'
 gem 'rinku'
 gem 'rubocop', require: false
 gem 'rubocop-rails'
-gem 'unicorn'
 gem 'jquery-rails'
+gem 'unicorn'

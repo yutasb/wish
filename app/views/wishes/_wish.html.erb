@@ -1,0 +1,5 @@
+<% if wish.user.image.url%>
+    <%=link_to image_tag("#{wish.user.image.url}",class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+<%else%>
+    <%= link_to image_tag('no-image.png',class:'thumbnailImg'),otherpage_path(wish.user_id) %>
+<%end%>
