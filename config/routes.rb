@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/index'
   get 'favorites/create'
   get 'favorites/destroy'
   root to: 'pages#home'

@@ -10,13 +10,23 @@
     <div>Email:　<%= current_user.email%></div>
     <div><%= simple_format(h(current_user.myself))%></div>
     <%= link_to 'プロフィール編集', edit_mypage_path(current_user.id), class:'btn btn-warning'%>
+    <div class='mt5'>
+        <%= link_to 'フォロー', follows_mypage_path(@user.id)%>
+        <%= @following%>
+        <%= link_to 'フォロワー', followers_mypage_path(@user.id)%>
+        <%= @follower%>
+    </div>
+    <div class='mt5'>
+        <%= link_to 'ユーザー検索', users_index_path, class:'btn btn-orange'%>
+    </div>
 </div>
+<div class='wishListInUserPage'>
     <div class='mt5'>
         <div class='ml30'>
             <h3>Wish一覧</h3>
             <br>
         </div>
-        <div class='center w60'>
+        
             <% @wishes.each do |wish| %>
                 <div class='oneWish p10 '>
                         <p><%= link_to "#{wish.title}", wish_path(wish.id) %></p>
@@ -32,7 +42,7 @@
                     <p><%= link_to wish.title, wish_path(wish.id) %></p>
                 </div>
             <% end%>
-        </div>
+        
     </div>
-
+</div>
 

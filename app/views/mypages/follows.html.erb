@@ -1,0 +1,22 @@
+<% content_for(:html_title) { 'Wish | フォロー一覧' } %>
+<div class='backLink'>
+  <%= link_to '戻る', mypage_path(current_user.id), class:"nav-link"%>
+</div>
+
+<h1 class='mt5'>フォロー一覧</h1>
+<% @users.each do |user|%>
+    <% if user.image.url%>
+        <div class='mt5'>
+            <%=link_to image_tag("#{user.image.url}",class:'followImg'),otherpage_path(user.id) %>
+            <%= link_to "#{user.name}", otherpage_path(user.id)%><br>
+        </div>
+    <%else%>
+        <div class='mt5'>
+            <%= link_to image_tag('no-image.png',class:'followImg'),otherpage_path(user.id) %>
+            <%= link_to "#{user.name}", otherpage_path(user.id)%><br>
+        </div>
+    <% end %>
+<% end%>
+<% if @users.count == 0%>
+   <h5 class='textCenter mt10'> フォローしているユーザーはいません　</h5>
+<% end%>

@@ -1,0 +1,38 @@
+<% content_for(:html_title) { 'Wish | ユーザー一覧' } %>
+<div class='backLink'>
+  <%= link_to '戻る', mypage_path(current_user.id), class:"nav-link"%>
+</div>
+<h1 class='mt5'>User一覧</h1>
+<div class='searchBoxAtUser'>
+    <div class='mt5'>
+        <%= search_form_for @search, url:users_index_path do |f|%>
+            <%= f.search_field :name_cont,placeholder:"ユーザー名"%>
+            <%= f.submit '検索', class:"btn btn-primary"%>
+        <% end %>
+    </div>
+</div>
+<div class='mt5 ml30'>
+    <% @users.each do |user|%>
+    <% if current_user.id != user.id %>
+            <% if user.followed_by?(current_user) %>
+                <% if user.image.url%>
+                    <div class='mt5'> <%= image_tag user.image.url(:medium), class:'followImg'%>
+                <%= link_to "#{user.name}", otherpage_path(user.id) %>
+                    <%=link_to "フォロー解除", mypage_relationships_path(user), class:'badge badge-danger',method: :delete %></div>
+                <%else%>
+                    <div class='mt5'><%= image_tag 'no-image.png',class:'followImg' %>
+                    <%= link_to "#{user.name}", otherpage_path(user.id) %>
+                    <%=link_to "フォロー解除", mypage_relationships_path(user), class:'badge badge-danger',method: :delete %></div>
+                <% end %>
+            <% else %>
+                <% if user.image.url%>
+                    <div class='mt5'><%= image_tag user.image.url(:medium), class:'followImg'%>
+                    <%= link_to "#{user.name}", otherpage_path(user.id) %><%=link_to "フォロー", mypage_relationships_path(user),class:'badge badge-info', method: :post %></div>
+                <%else%>
+                    <div class='mt5'><%= image_tag 'no-image.png',class:'followImg' %>
+                    <%= link_to "#{user.name}", otherpage_path(user.id) %><%=link_to "フォロー", mypage_relationships_path(user),class:'badge badge-info', method: :post %></div>
+                <% end%>
+            <% end %>
+        <% end %>
+    <% end%>
+</div>

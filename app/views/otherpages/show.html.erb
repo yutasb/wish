@@ -21,16 +21,16 @@
     <div><%= @user.name%></div>
     <div><%= simple_format(h(@user.myself))%></div>
 </div>
-<div class='mt5'>
-    <div class='ml30'>
-        <h3>Wish一覧</h3>
-        <br>
-    </div>
-    <div class='w60 center'>
-        <% @wishes.each do |wish|%>
-            <div class='oneWish p10'>
-                <p><%= link_to "#{wish.title}", wish_path(wish.id)%></p>
-            </div>
-        <% end %>
+<div class='wishListInUserPage'>
+    <div class='mt5'>
+        <div class='ml30'>
+            <h3>Wish一覧</h3>
+            <br>
+        </div>
+            <% @wishes.each do |wish|%>
+                <div class='oneWish p10'>
+                    <p><%= link_to "#{wish.title}", wish_path(wish.id)%></p>
+                </div>
+            <% end %>
     </div>
 </div>

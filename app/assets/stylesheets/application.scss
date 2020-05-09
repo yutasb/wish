@@ -61,6 +61,11 @@
   height: auto !important;
 }
 
+.followImg {
+  width: 80px;
+  height: auto;
+}
+
 .btn-wish {
   color: white;
   background-color: #1323b9;
@@ -82,6 +87,11 @@
   width: 50%;
 }
 
+.wishListInUserPage {
+  margin-left: 30% !important;
+  width: 60% !important;
+}
+
 .center {
   margin: 0 auto !important;
 }
@@ -89,6 +99,10 @@
 .searchBox {
   text-align: left;
   float: left;
+}
+
+.searchBoxAtUser {
+  text-align: center;
 }
 
 .textCenter {
@@ -344,6 +358,11 @@ hr {
   .wishList {
     margin-left: 50% !important;
     width: 60%;
+  }
+
+  .wishListInUserPage {
+    margin-left: 42% !important;
+    width: 60% !important;
   }
 
   .formCluster {
