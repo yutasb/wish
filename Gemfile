@@ -73,4 +73,5 @@ gem 'rinku'
 gem 'rubocop', require: false
 gem 'rubocop-rails'
 gem 'jquery-rails'
+gem 'activerecord-import'
 gem 'unicorn'

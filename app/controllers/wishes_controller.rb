@@ -13,7 +13,6 @@ class WishesController < ApplicationController
   end
 
   def index
-    @wishes = Wish.all
     @search = Wish.ransack(params[:q])
     @wishes = @search.result
   end

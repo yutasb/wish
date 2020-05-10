@@ -1,0 +1,21 @@
+<% if current_user.id != user.id %>
+    <% if user.followed_by?(current_user) %>
+        <% if user.image.url%>
+            <div class='mt5'> <%= link_to image_tag("#{user.image.url}", class:'followImg'),otherpage_path(user.id)%>
+            <%= link_to "#{user.name}", otherpage_path(user.id) %>
+            <%=link_to "フォロー解除", mypage_relationships_path(user), class:'badge badge-danger',method: :delete %></div>
+        <%else%>
+            <div class='mt5'><%= link_to image_tag('no-image.png',class:'followImg'),otherpage_path(user.id) %>
+            <%= link_to "#{user.name}", otherpage_path(user.id) %>
+            <%=link_to "フォロー解除", mypage_relationships_path(user), class:'badge badge-danger',method: :delete %></div>
+        <% end %>
+    <% else %>
+        <% if user.image.url%>
+            <div class='mt5'> <%= link_to image_tag("#{user.image.url}", class:'followImg'),otherpage_path(user.id)%>
+            <%= link_to "#{user.name}", otherpage_path(user.id) %><%=link_to "フォロー", mypage_relationships_path(user),class:'badge badge-info', method: :post %></div>
+        <%else%>
+            <div class='mt5'><%= link_to image_tag('no-image.png',class:'followImg'),otherpage_path(user.id) %>
+            <%= link_to "#{user.name}", otherpage_path(user.id) %><%=link_to "フォロー", mypage_relationships_path(user),class:'badge badge-info', method: :post %></div>
+        <% end%>
+    <% end %>
+<% end %>

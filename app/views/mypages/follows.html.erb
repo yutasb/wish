@@ -5,16 +5,8 @@
 
 <h1 class='mt5'>フォロー一覧</h1>
 <% @users.each do |user|%>
-    <% if user.image.url%>
-        <div class='mt5'>
-            <%=link_to image_tag("#{user.image.url}",class:'followImg'),otherpage_path(user.id) %>
-            <%= link_to "#{user.name}", otherpage_path(user.id)%><br>
-        </div>
-    <%else%>
-        <div class='mt5'>
-            <%= link_to image_tag('no-image.png',class:'followImg'),otherpage_path(user.id) %>
-            <%= link_to "#{user.name}", otherpage_path(user.id)%><br>
-        </div>
+    <% if current_user.id != user.id %>
+        <%= render partial: 'users/user', locals:{user: user} %>
     <% end %>
 <% end%>
 <% if @users.count == 0%>

@@ -22,9 +22,9 @@
                 <% if wish.done_wish(wish)%>
                     <%= render partial: 'wishes/wish', locals:{wish: wish} %>
                     <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText doneLine'%>
-                     <div id="favorites_buttons_<%= wish.id %>">
-                        <%= render partial: 'favorites/favorite',locals:{wish: wish}%>
-                    </div>
+                        <div id="favorites_buttons_<%= wish.id %>">
+                            <%= render partial: 'favorites/favorite',locals:{wish: wish}%>
+                        </div>
                 <% else%>
                     <%= render partial: 'wishes/wish', locals:{wish: wish} %>
                     <%= link_to "#{wish.title}",wish_path(wish.id),class:'thumnailText'%>
