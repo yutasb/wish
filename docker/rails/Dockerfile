@@ -13,4 +13,4 @@ RUN bundle install -j4
 # -j4は同時に4つダウンロード&インストールを実施するオプション
 ADD . /app
 
-EXPOSE 3000
+EXPOSE 3100
